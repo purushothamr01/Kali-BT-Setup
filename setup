@@ -4,21 +4,27 @@ To set up Bluetooth on Kali Linux, follow these steps:
 1. Install Bluetooth Utilities
 First, ensure that the necessary Bluetooth packages are installed. Open a terminal and run the following command to install bluetooth, bluez, and blueman (Bluetooth manager):
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo apt update
 sudo apt install bluetooth bluez blueman
+-----------------------------------------------------------------------------------
 
 2. Start and Enable Bluetooth Service
 After installation, start and enable the Bluetooth service so that it runs on boot.
 
+-----------------------------------------------------------------------------------
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
+-------------------------------
 
 3. Use blueman (Graphical Interface)
  If you’re using a GUI (Graphical User Interface) in Kali, you can use Blueman for easier Bluetooth device management.
 
 - Launch Blueman by searching for it in the applications menu or by running:
 
+----------------
 blueman-manager
+----------------
 
 - In the Blueman window, click on “Search” to scan for nearby devices. Pair with the device by selecting it from the list and following the prompts.
 
@@ -26,43 +32,52 @@ blueman-manager
 If you’re using Kali without a GUI or prefer the terminal, you can manage Bluetooth with the following commands:
 
 Enable Bluetooth:
-
+-------------------------------
 sudo rfkill unblock bluetooth
+-------------------------------
 
 Scan for Devices:
-
+------------------
 sudo bluetoothctl
 scan on
+-----------------
 
 Pair with a Device: Once the scan finds the device you want to pair with, note its MAC address. Then, in the bluetoothctl terminal:
 
+-------------------
 pair <MAC_address>
+------------------
 
 Connect to the Device:
-
+----------------------
 connect <MAC_address>
+---------------------
 
 Trust the Device (optional): To automatically reconnect to the device in the future:
-
+--------------------
 trust <MAC_address>
+-------------------
 
 5. Troubleshooting
-If you’re having issues with Bluetooth:
+ If you’re having issues with Bluetooth:
 
-Ensure that your Bluetooth adapter is recognized by running:
-
+- Ensure that your Bluetooth adapter is recognized by running:
+-----------
 sudo lsusb
-
+----------
 or
-
+-----------
 sudo lspci
+-----------
 
-If the adapter is blocked, unblock it with:
-
+- If the adapter is blocked, unblock it with:
+------------------------------
 sudo rfkill unblock bluetooth
+------------------------------
 
-Restart the Bluetooth service:
-
+- Restart the Bluetooth service:
+--------------------------------
 sudo systemctl restart bluetooth
+--------------------------------
 
 These steps should help you set up and manage Bluetooth devices on Kali Linux! Let me know if you encounter any specific issues.
