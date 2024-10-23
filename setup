@@ -14,19 +14,21 @@ sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
 3. Use blueman (Graphical Interface)
-If you’re using a GUI (Graphical User Interface) in Kali, you can use Blueman for easier Bluetooth device management.
+ If you’re using a GUI (Graphical User Interface) in Kali, you can use Blueman for easier Bluetooth device management.
 
-Launch Blueman by searching for it in the applications menu or by running:
+- Launch Blueman by searching for it in the applications menu or by running:
 
 blueman-manager
 
-In the Blueman window, click on “Search” to scan for nearby devices. Pair with the device by selecting it from the list and following the prompts.
+- In the Blueman window, click on “Search” to scan for nearby devices. Pair with the device by selecting it from the list and following the prompts.
 
 4. Command-Line Bluetooth Management
 If you’re using Kali without a GUI or prefer the terminal, you can manage Bluetooth with the following commands:
 
 Enable Bluetooth:
+
 sudo rfkill unblock bluetooth
+
 Scan for Devices:
 
 sudo bluetoothctl
